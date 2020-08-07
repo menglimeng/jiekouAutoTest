@@ -1,0 +1,56 @@
+[
+  {
+    "description": "这是一个可以查看cookies信息的get方法",
+    "request": {
+      "uri": "/getCookiesMethod",
+      "method": "get"
+    },
+    "response": {
+      "cookies": {
+        "login": "true"
+      },
+      "text": "获取到cookies信息啦"
+
+    }
+  },
+  {
+    "description": "这是一个带cookies请求的信息",
+    "request": {
+      "uri": "/getCookies",
+      "method": "get",
+      "cookies": {
+        "login": "true"
+      }
+    },
+    "response": {
+      "text": "这是一个get方法的cookies请求"
+    }
+  },
+
+  {
+    "description": "这是一个post的cookies方法",
+    "request": {
+      "uri": "/postCookies",
+      "method": "post",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "cookies": {
+        "login": "true"
+      },
+      "json": {
+        "username": "zhangsan",
+        "age": "18"
+      }
+    },
+    "response": {
+      "status": "200",
+      "json": {
+        "zhangsan": "success",
+        "status": "1"
+      }
+    }
+  }
+
+
+]

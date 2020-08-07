@@ -1,0 +1,23 @@
+[
+  {
+    "description": "这是一个带header请求头的信息",
+    "request": {
+      "uri": "/postHeader",
+      "method": "post",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "json": {
+        "name": "zhangsan",
+        "sex": "man"
+      }
+    },
+    "response": {
+      "status": "200",
+      "json": {
+        "zhangsan": "success",
+        "status": "1"
+      }
+    }
+  }
+]

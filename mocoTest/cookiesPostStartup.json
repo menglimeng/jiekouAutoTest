@@ -1,0 +1,23 @@
+[
+  {
+    "description": "这是一个post的cookies方法",
+    "request": {
+      "uri": "/postCookies",
+      "method": "post",
+      "cookies": {
+        "login": "true"
+      },
+      "json": {
+        "username": "zhangsan",
+        "age": "18"
+      }
+    },
+    "response": {
+      "status": "200",
+      "json": {
+        "zhangsan": "success",
+        "status": "1"
+      }
+    }
+  }
+]

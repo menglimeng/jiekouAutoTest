@@ -1,0 +1,25 @@
+[
+  {
+    "description": "这是一个重定向请求",
+    "request": {
+      "uri": "/redirectDemo"
+    },
+    "redirectTo": "http://baidu.com"
+  },
+  {
+    "description": "重定向自己的一个请求",
+    "request": {
+      "uri": "/redirectSelfDemo"
+    },
+    "redirectTo": "/redirect_mes"
+  },
+  {
+    "description": "这是一个被重定向的信息",
+    "request": {
+      "uri": "/redirect_mes"
+    },
+    "response": {
+      "text": "重定向成功啦"
+    }
+  }
+]
