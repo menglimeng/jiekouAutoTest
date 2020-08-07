@@ -1,9 +1,6 @@
 package com.example.server;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -44,9 +41,9 @@ public class GetCookieTest {
     }
 
     /**
-     * 携带参数的第一种写法  url=ip:port?value=param&value=param
-     * @param start 开始数组
-     * @param end 结束数组
+     * 携带参数的第一种写法  ip:port/url?value=param&value=param
+     * @param start 数组起始位置
+     * @param end 数组结束位置
      * @return
      */
     @RequestMapping(value = "/getWithParamTest1",method = RequestMethod.GET)
@@ -55,6 +52,21 @@ public class GetCookieTest {
         paramList.put("苹果",5);
         paramList.put("香蕉",2);
         paramList.put("脆桃",10);
+        return paramList;
+    }
+
+    /**
+     * 携带get参数第二种实现方式 ip:port/url/{start}/{end}
+     * @param start 数组起始位置
+     * @param end 数组结束位置
+     * @return
+     */
+    @RequestMapping(value ="/getWithParamTest2/{start}/{end}",method = RequestMethod.GET)
+    public Map getWithParamTest2(@PathVariable Integer start,@PathVariable Integer end){
+        Map<String,Integer> paramList = new HashMap<>();
+        paramList.put("test1",1);
+        paramList.put("test2",2);
+        paramList.put("test3",3);
         return paramList;
     }
 }
