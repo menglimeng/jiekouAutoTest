@@ -1,5 +1,7 @@
 package com.example.server;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
@@ -10,12 +12,14 @@ import java.util.Map;
 import java.util.Objects;
 
 @RestController
+@Api(value = "/",description = "这是我全部的get方法")
 public class GetCookieTest {
     /**
      * 获取cookies
      * @param response 装响应信息
      */
     @RequestMapping(value = "/getCookies",method = RequestMethod.GET)
+    @ApiOperation(value = "获得cookies信息",httpMethod = "GET")
     public void getCookies(HttpServletResponse response){
         Cookie cookie = new Cookie("login","true");
         response.addCookie(cookie);
@@ -27,6 +31,7 @@ public class GetCookieTest {
      * @return
      */
     @RequestMapping(value = "/getWithCookies",method = RequestMethod.GET)
+    @ApiOperation(value = "携带cookies访问get",httpMethod = "GET")
     public String getWithCookies(HttpServletRequest request){
         Cookie[] cookies =request.getCookies();
         if(Objects.isNull(cookies)){
@@ -47,6 +52,7 @@ public class GetCookieTest {
      * @return
      */
     @RequestMapping(value = "/getWithParamTest1",method = RequestMethod.GET)
+    @ApiOperation(value = "携带参数第一种写法",httpMethod = "GET")
     public Map<String,Integer> getWithParam(@RequestParam Integer start,@RequestParam Integer end){
         Map<String,Integer> paramList = new HashMap<>();
         paramList.put("苹果",5);
@@ -62,6 +68,7 @@ public class GetCookieTest {
      * @return
      */
     @RequestMapping(value ="/getWithParamTest2/{start}/{end}",method = RequestMethod.GET)
+    @ApiOperation(value = "携带参数的第二种方法",httpMethod = "GET")
     public Map getWithParamTest2(@PathVariable Integer start,@PathVariable Integer end){
         Map<String,Integer> paramList = new HashMap<>();
         paramList.put("test1",1);
