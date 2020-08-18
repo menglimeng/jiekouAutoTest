@@ -18,6 +18,7 @@
         <module>jiekouTest1</module>
         <module>httpClientTest</module>
         <module>springBootTest</module>
+        <module>MybatisTest</module>
     </modules>
 
 
