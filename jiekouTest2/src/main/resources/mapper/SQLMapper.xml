@@ -13,12 +13,12 @@
         select * from updateusercase where id = #{id};
     </select>
     <select id="deleteUserCase" parameterType="Integer" resultType="com.course.model.UpdateUserCase">
-        select * from updateusercase where id = #{id} and isDelete="1";
+        select * from updateusercase where id = #{id} ;
     </select>
     <select id="getUserInfoCase" parameterType="Integer" resultType="com.course.model.GetUserInfoCase">
         select * from  getuserinfocase where id = #{id};
     </select>
     <select id="getUserListCase" parameterType="Integer" resultType="com.course.model.GetuserListCase">
-        select * from getuserlistinfo where id = #{id};
+        select * from getuserlistcase where id = #{id};
     </select>
 </mapper>

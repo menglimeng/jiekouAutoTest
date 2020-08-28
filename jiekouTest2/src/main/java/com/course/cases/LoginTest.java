@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class LoginTest {
-    @BeforeTest(groups = "loginTure",description = "登陆case")
+    @BeforeTest(groups = "loginTrue",description = "测试准备工作,获取HttpClient对象")
     public void beforeTest(){
         UserUrlConfig.addUserUrl = UserUrl.getUrl(InterfaceName.addUserCase);
         UserUrlConfig.getGetUserInfoUrl = UserUrl.getUrl(InterfaceName.getuserListCase);
@@ -22,7 +22,7 @@ public class LoginTest {
         UserUrlConfig.updateUrl = UserUrl.getUrl(InterfaceName.updateUserCase);
         UserUrlConfig.httpClient = new DefaultHttpClient();
     }
-    @Test(groups = "loginTure",description = "登陆成功测试用例")
+    @Test(groups = "loginTrue",description = "用户成功登陆接口")
     public void loginTrueCase() throws IOException {
         SqlSession sqlSession = DataBaseUtils.sqlSession();
         LoginCase loginCase = sqlSession.selectOne("LoginCase",1);
@@ -30,7 +30,7 @@ public class LoginTest {
         System.out.println(UserUrlConfig.loginUrl);
     }
     @Test(groups = "loginFalse",description = "登陆失败测试用例")
-    public void loginFalseCasw() throws IOException {
+    public void loginFalseCase() throws IOException {
         SqlSession sqlSession = DataBaseUtils.sqlSession();
         LoginCase loginCase = sqlSession.selectOne("LoginCase",2);
         System.out.println(loginCase.toString());
