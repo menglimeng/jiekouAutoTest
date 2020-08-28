@@ -11,9 +11,11 @@
 
     <artifactId>MybatisTest</artifactId>
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.2.1.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
@@ -28,19 +30,18 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.38</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/MySQL/mysql-connector-java -->
         <dependency>
-            <groupId>MySQL</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.40</version>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+          <version>8.0.11</version>
         </dependency>
-
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>

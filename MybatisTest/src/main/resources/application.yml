@@ -1,5 +1,5 @@
 server:
-  prot:
+  prot: 8080
 
 logging:
   file:
@@ -10,12 +10,11 @@ spring:
   application:
     name: myTest
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/test
-    data-username: admin
-    data-password: 123456
-
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/course?useUnicode=true&amp&characterEncoding=UTF-8
+    username: root
+    password: 123456
 mybatis:
-  type-aliases-package:
-    mapper-locations:
-      - mapper/*
+  type-aliases-package: com.course.bean
+  mapper-locations:
+    - mapper/*

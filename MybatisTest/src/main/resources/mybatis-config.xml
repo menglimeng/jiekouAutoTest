@@ -3,9 +3,9 @@
 
 <configuration>
     <typeAliases>
-        <package name=""></package>
+        <package name="com.course.bean"></package>
     </typeAliases>
     <mappers>
-        <mapper resource="mapper/**.xml"></mapper>
+        <mapper resource="mapper/mysql.xml"></mapper>
     </mappers>
 </configuration>

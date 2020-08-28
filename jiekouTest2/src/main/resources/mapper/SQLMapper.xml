@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.course.model">
+    <select id="LoginCase" parameterType="Integer" resultType="com.course.model.LoginCase">
+        select * from  logincase where id = #{id};
+    </select>
+    <select id="addUserCase" parameterType="Integer" resultType="com.course.model.AddUserCase">
+        select * from addusercase where id = #{id};
+    </select>
+    <select id="updateUserCase" parameterType="Integer" resultType="com.course.model.UpdateUserCase">
+        select * from updateusercase where id = #{id};
+    </select>
+    <select id="deleteUserCase" parameterType="Integer" resultType="com.course.model.UpdateUserCase">
+        select * from updateusercase where id = #{id} and isDelete="1";
+    </select>
+    <select id="getUserInfoCase" parameterType="Integer" resultType="com.course.model.GetUserInfoCase">
+        select * from  getuserinfocase where id = #{id};
+    </select>
+    <select id="getUserListCase" parameterType="Integer" resultType="com.course.model.GetuserListCase">
+        select * from getuserlistinfo where id = #{id};
+    </select>
+</mapper>
