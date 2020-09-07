@@ -20,6 +20,7 @@
         <module>springBootTest</module>
         <module>MybatisTest</module>
         <module>jiekouTest2</module>
+        <module>MybatisCheck</module>
     </modules>
 
 

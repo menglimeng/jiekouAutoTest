@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+logging:
+  patth: logs
+  file:
+    name: mylog.log
+
+spring:
+  application:
+    name: mybatisCheck
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhose:3306/course?useUnicode=true&amp&characterEncoding=UTF-8
+    data-username: root
+    data-password: 123456
+  mybatis:
+    type-aliases-package: com.course.bean
+    mapper-locations:
+      - mapper/*
