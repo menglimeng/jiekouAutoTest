@@ -30,7 +30,7 @@ public class UserController {
         servletResponse.addCookie(cookie);
         log.info("查询到的结果是"+i);
         if(i==1){
-            log.info("登录的用户是"+user.getName());
+            log.info("登录的用户是"+user.getUsername());
             return true;
         }
         return false;
