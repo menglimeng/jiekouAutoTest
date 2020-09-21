@@ -1,8 +1,9 @@
 package com.course.config;
 
+import org.apache.http.client.CookieStore;
 import org.apache.http.impl.client.DefaultHttpClient;
 
-import java.net.CookieStore;
+
 
 public class UserUrlConfig {
     public static String loginUrl;
