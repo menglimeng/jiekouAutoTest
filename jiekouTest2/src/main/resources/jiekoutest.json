@@ -1,0 +1,19 @@
+[
+  {
+    "description": "接口自动化测试接口",
+    "request":{
+      "uri": "/login",
+      "method": "post",
+      "json": {
+        "name": "zhangsan",
+        "password": "123456"
+      }
+    },
+    "response": {
+      "cookies": {
+        "login": "ture"
+      },
+      "text": "true"
+    }
+  }
+]
