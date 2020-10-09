@@ -2,6 +2,7 @@ package com.course.cases;
 
 import com.course.config.UserUrlConfig;
 import com.course.model.AddUserCase;
+import com.course.model.User;
 import com.course.utils.DataBaseUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -17,7 +18,7 @@ import java.io.IOException;
 public class AddUserTest {
 
     @Test(dependsOnGroups = "loginTrue",description = "添加用户接口接口")
-    public void addUserTureCase() throws IOException {
+    public void addUserTureCase() throws IOException, InterruptedException {
         SqlSession sqlSession = DataBaseUtils.sqlSession();
         AddUserCase addUserCase = sqlSession.selectOne("addUserCase",1);
         System.out.println(addUserCase.toString());
@@ -25,6 +26,9 @@ public class AddUserTest {
         //获取请求，返回结果
         String result = getResult(addUserCase);
         //结果比对
+        Thread.sleep(3000);
+        User user = sqlSession.selectOne("addUser",addUserCase);
+        System.out.println(user.toString());
         Assert.assertEquals(addUserCase.getExpected(),result);
     }
 
@@ -51,7 +55,8 @@ public class AddUserTest {
         //存放返回结果
         String result;
         HttpResponse httpResponse = UserUrlConfig.httpClient.execute(httpPost);
-        result = EntityUtils.toString(httpPost.getEntity(),"utf-8");
+        System.out.println(httpResponse);
+        result = EntityUtils.toString(httpResponse.getEntity(),"utf-8");
         return result;
     }
 }

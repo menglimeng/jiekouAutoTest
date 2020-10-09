@@ -2,24 +2,24 @@
   {
     "description": "登录接口",
     "request":{
-      "uri": "/login",
+      "uri": "/v1/login",
       "method": "post",
       "json": {
-        "name": "zhangsan",
-        "password": "123456"
+        "username": "test",
+        "password": "123"
       }
     },
     "response": {
       "cookies": {
         "login": "ture"
       },
-      "text": "true"
+      "text": "1"
     }
   },
   {
     "description":"获取用户信息接口",
     "request":{
-      "uri":"/getUserInfo",
+      "uri":"/v1/getUserInfo",
       "method":"post",
       "json":{
         "userId":"1"
@@ -43,7 +43,7 @@
   {
     "description":"获取用户信息列表",
     "request":{
-      "uri":"/getUserInfo",
+      "uri":"/v1/getUserInfo",
       "method":"post",
       "json":{
         "userId":"1"
@@ -67,7 +67,7 @@
   {
     "description":"获取用户信息列表",
     "request":{
-      "uri":"/getUserListInfo",
+      "uri":"/v1/getUserListInfo",
       "method":"post",
       "json":{
         "sex":"0"
@@ -113,28 +113,28 @@
   {
     "description":"新增用户",
     "request":{
-      "uri":"/addUser",
+      "uri":"/v1/addUser",
       "method":"post",
       "json":{
-        "userName":"zhao9",
-        "password":"zhaozhao",
+        "userName":"test",
+        "password":"123456",
         "sex":"0",
-        "age":"35",
+        "age":"23",
         "permission":"1",
-        "isDelete":"0"
+        "isDelete":"1"
       },
       "cookies":{
         "login":"true"
       }
     },
     "response":{
-      "text":"true"
+      "text":"11"
     }
   },
   {
     "description":"更新用户",
     "request":{
-      "uri":"/updateUserInfo",
+      "uri":"/v1/updateUserInfo",
       "method":"post",
       "json":{
         "userId":"2",
@@ -151,7 +151,7 @@
   {
     "description": "删除用户",
     "request": {
-      "uri": "/deleteUser",
+      "uri": "/v1/deleteUser",
       "method": "post",
       "json": {
         "userId": "8"
