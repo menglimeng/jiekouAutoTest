@@ -13,7 +13,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://39.106.208.6:3306/course?useUnicode=true&amp&characterEncoding=UTF-8&serverTimezone=UTC
     username: root
-    password: niuzy
+    password:
 mybatis:
   type-aliases-package: com.course.bean
   mapper-locations:
