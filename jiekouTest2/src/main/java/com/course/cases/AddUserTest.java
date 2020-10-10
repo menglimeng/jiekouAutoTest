@@ -37,14 +37,12 @@ public class AddUserTest {
         HttpPost httpPost =  new HttpPost(UserUrlConfig.addUserUrl);
         //写入参数
         JSONObject param = new JSONObject();
-        param.put("id",addUserCase.getId());
-        param.put("username",addUserCase.getUserName());
-        param.put("age",addUserCase.getAge());
-        param.put("sex",addUserCase.getSex());
+        param.put("userName",addUserCase.getUserName());
         param.put("password",addUserCase.getPassword());
+        param.put("sex",addUserCase.getSex());
+        param.put("age",addUserCase.getAge());
         param.put("permission",addUserCase.getPermission());
         param.put("isDelete",addUserCase.getIsDelete());
-        param.put("expected",addUserCase.getExpected());
         //设置请求头信息
         httpPost.setHeader("content-type","application/json");
         //将参数写入请求信息中
