@@ -43,7 +43,7 @@ public class GetUserListTest {
     private JSONArray getJsonResult(GetuserListCase getuserListCase) throws IOException {
         HttpPost httpPost = new HttpPost(UserUrlConfig.getUserListUrl);
         JSONObject param = new JSONObject();
-        param.put("userName",getuserListCase.getUsername());
+        param.put("userName",getuserListCase.getUserName());
         param.put("sex",getuserListCase.getSex());
         param.put("age",getuserListCase.getAge());
         httpPost.setHeader("context-type","application/json");

@@ -33,14 +33,14 @@
         and isDelete=#{isDelete};
     </select>
     <!--获取用户信息-->
-    <select id="getUserInfo" parameterType="com.tester.model.GetUserInfoCase" resultType="com.tester.model.User">
+    <select id="getUserInfo" parameterType="com.course.model.GetUserInfoCase" resultType="com.course.model.User">
         <!-- SQL语句 -->
         select * from user where
         id=#{userId};
     </select>
 
     <!--获取用户列表-->
-    <select id="getUserList" parameterType="com.tester.model.GetUserListCase" resultType="com.tester.model.User">
+    <select id="getUserList" parameterType="com.course.model.GetuserListCase" resultType="com.course.model.User">
         <!-- SQL语句 -->
         select * from user
         <trim prefix="WHERE" prefixOverrides="and">
@@ -59,7 +59,7 @@
     </select>
 
     <!--获取更新后的数据-->
-    <select id="getUpdateUserInfo" parameterType="com.tester.model.UpdateUserInfoCase" resultType="com.tester.model.User">
+    <select id="getUpdateUserInfo" parameterType="com.course.model.UpdateUserCase" resultType="com.course.model.User">
         select * from user
         <trim prefix="WHERE" prefixOverrides="and">
             <if test="null != userName and '' !=userName">
