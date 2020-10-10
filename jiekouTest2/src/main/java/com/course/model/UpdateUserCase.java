@@ -5,11 +5,11 @@ import lombok.Data;
 @Data
 public class UpdateUserCase {
     private int id;
-    private int uesrid;
+    private int userId;
     private String userName;
-    private int sex;
-    private int age;
-    private int permission;
-    private int isDelete;
-    private int expected;
+    private String sex;
+    private String age;
+    private String permission;
+    private String isDelete;
+    private String expected;
 }
