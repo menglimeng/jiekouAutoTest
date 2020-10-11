@@ -25,7 +25,7 @@
         "userId":"1"
       },
       "cookies":{
-        "login":"true"
+        "login":"ture"
       }
     },
     "response":{
@@ -49,7 +49,7 @@
         "userId":"1"
       },
       "cookies":{
-        "login":"true"
+        "login":"ture"
       }
     },
     "response":{
@@ -73,7 +73,7 @@
         "sex":"0"
       },
       "cookies":{
-        "login":"true"
+        "login":"ture"
       }
     },
     "response":{
@@ -124,7 +124,7 @@
         "isDelete":"1"
       },
       "cookies":{
-        "login":"true"
+        "login":"ture"
       }
     },
     "response":{
@@ -134,18 +134,18 @@
   {
     "description":"更新用户",
     "request":{
-      "uri":"/v1/updateUserInfo",
+      "uri":"/v1/updateUser",
       "method":"post",
       "json":{
         "userId":"2",
-        "userName":"hahahaha"
+        "userName":"zhangsan"
       },
       "cookies":{
-        "login":"true"
+        "login":"ture"
       }
     },
     "response":{
-      "text":"true"
+      "text":"11"
     }
   },
   {
@@ -154,14 +154,14 @@
       "uri": "/v1/deleteUser",
       "method": "post",
       "json": {
-        "userId": "8"
+        "userId": "1"
       },
       "cookies": {
-        "login": "true"
+        "login": "ture"
       }
     },
     "response": {
-      "text": "true"
+      "text": "ture"
     }
   }
 ]
