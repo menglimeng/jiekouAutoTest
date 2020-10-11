@@ -26,7 +26,7 @@ public class AddUserTest {
         //获取请求，返回结果
         String result = getResult(addUserCase);
         //结果比对
-        //Thread.sleep(3000);
+        Thread.sleep(3000);
         User user = sqlSession.selectOne("addUser",addUserCase);
         System.out.println(user.toString());
         Assert.assertEquals(addUserCase.getExpected(),result);

@@ -43,7 +43,7 @@
   {
     "description":"获取用户信息列表",
     "request":{
-      "uri":"/v1/getUserInfo",
+      "uri":"/v1/getUserList",
       "method":"post",
       "json":{
         "userId":"1"
@@ -55,19 +55,19 @@
     "response":{
       "json":{
         "id":"1",
-        "userName":"zhangsan",
+        "userName":"test",
         "password":"123456",
-        "age":"20",
+        "age":"23",
         "sex":"0",
-        "permission":"0",
-        "isDelete":"0"
+        "permission":"1",
+        "isDelete":"1"
       }
     }
   },
   {
     "description":"获取用户信息列表",
     "request":{
-      "uri":"/v1/getUserListInfo",
+      "uri":"/v1/getUserListCase",
       "method":"post",
       "json":{
         "sex":"0"
@@ -154,7 +154,7 @@
       "uri": "/v1/deleteUser",
       "method": "post",
       "json": {
-        "userId": "1"
+        "userId": "3"
       },
       "cookies": {
         "login": "ture"

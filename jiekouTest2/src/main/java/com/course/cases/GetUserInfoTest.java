@@ -29,7 +29,7 @@ public class GetUserInfoTest {
         //获取请求结果
         JSONArray resultJson = getJsonResult(getUserInfoCase);
         //结果比对
-        User user = sqlSession.selectOne(getUserInfoCase.getExpected(),getUserInfoCase);
+        User user = sqlSession.selectOne("getUserInfo",getUserInfoCase);
         List userList = new ArrayList();
         userList.add(user);
         JSONArray jsonArray = new JSONArray(userList);
@@ -41,7 +41,7 @@ public class GetUserInfoTest {
         HttpPost httpPost = new HttpPost(UserUrlConfig.getGetUserInfoUrl);
         //写入参数
         JSONObject param = new JSONObject();
-        param.put("id",getUserInfoCase.getUserId());
+        param.put("userId",getUserInfoCase.getUserId()+"");
         //写入头信息
         httpPost.setHeader("context-type","application/json");
         //参数放入请求

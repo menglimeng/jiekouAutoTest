@@ -24,7 +24,9 @@ public class UpdateUserTest {
         System.out.println(UserUrlConfig.updateUrl);
 
         int result = getResult(updateUserCase);
-        User user = sqlSession.selectOne(updateUserCase.getExpected(),updateUserCase);
+        System.out.println(result);
+        User user = sqlSession.selectOne("getUpdateUserInfo",updateUserCase);
+        System.out.println(user);
         Assert.assertNotNull(user);
         Assert.assertNotNull(result);
     }
@@ -39,11 +41,13 @@ public class UpdateUserTest {
         System.out.println(UserUrlConfig.updateUrl);
 
         int result = getResult(updateUserCase);
-        User user = sqlSession.selectOne(updateUserCase.getExpected(),updateUserCase);
+        System.out.println(result);
+        User user = sqlSession.selectOne("getUpdateUserInfo",updateUserCase);
         Assert.assertNotNull(user);
         Assert.assertNotNull(result);
     }
     private int getResult(UpdateUserCase updateUserCase) throws IOException {
+
         HttpPost httpPost = new HttpPost(UserUrlConfig.updateUrl);
         JSONObject param = new JSONObject();
         param.put("userId",updateUserCase.getUserId()+"");
