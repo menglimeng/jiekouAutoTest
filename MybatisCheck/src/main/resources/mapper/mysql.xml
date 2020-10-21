@@ -46,6 +46,9 @@
     <update id="updateUser" parameterType="com.course.bean.User">
         update user
         <trim prefix="set" suffixOverrides=",">
+            <if test="null != id and ' ' != id">
+                id=#{userId}
+            </if>
             <if test="null != username and ' ' != username">
                 username=#{username}
             </if>

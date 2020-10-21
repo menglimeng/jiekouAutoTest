@@ -19,7 +19,7 @@ public class UpdateUserTest {
     @Test(dependsOnGroups = "loginTrue",description = "修改用户成功案例")
     public void UpadteUserTureCase() throws IOException {
         SqlSession sqlSession = DataBaseUtils.sqlSession();
-        UpdateUserCase updateUserCase = sqlSession.selectOne("updateUserCase",2);
+        UpdateUserCase updateUserCase = sqlSession.selectOne("updateUserCase",1);
         System.out.println(updateUserCase.toString());
         System.out.println(UserUrlConfig.updateUrl);
 
@@ -52,10 +52,10 @@ public class UpdateUserTest {
         JSONObject param = new JSONObject();
         param.put("userId",updateUserCase.getUserId()+"");
         param.put("userName",updateUserCase.getUserName());
-       /* param.put("sex",updateUserCase.getSex());
+        param.put("sex",updateUserCase.getSex());
         param.put("age",updateUserCase.getAge());
         param.put("permission",updateUserCase.getPermission());
-        param.put("isDelete",updateUserCase.getIsDelete());*/
+        param.put("isDelete",updateUserCase.getIsDelete());
         httpPost.setHeader("context-type","application/json");
         StringEntity entity = new StringEntity(param.toString(),"utf-8");
         httpPost.setEntity(entity);

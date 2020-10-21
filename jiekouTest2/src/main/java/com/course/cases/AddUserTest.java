@@ -37,7 +37,7 @@ public class AddUserTest {
         HttpPost httpPost =  new HttpPost(UserUrlConfig.addUserUrl);
         //写入参数
         JSONObject param = new JSONObject();
-        param.put("userName",addUserCase.getUserName());
+        param.put("username",addUserCase.getUserName());
         param.put("password",addUserCase.getPassword());
         param.put("sex",addUserCase.getSex());
         param.put("age",addUserCase.getAge());

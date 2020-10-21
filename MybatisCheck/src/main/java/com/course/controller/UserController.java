@@ -23,7 +23,7 @@ public class UserController {
     @Autowired
     private SqlSessionTemplate template;
     @ApiOperation(value = "登录接口",httpMethod = "POST")
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    @RequestMapping(value = "/v1/login",method = RequestMethod.POST)
     public boolean login(HttpServletResponse servletResponse , @RequestBody User user){
         int i = template.selectOne("login",user);
         Cookie cookie = new Cookie("login","true");
@@ -36,7 +36,7 @@ public class UserController {
         return false;
     }
     @ApiOperation(value = "新增用户信息接口",httpMethod = "POST")
-    @RequestMapping(value = "/addUser",method = RequestMethod.POST)
+    @RequestMapping(value = "/v1/addUser",method = RequestMethod.POST)
     public boolean addUser(HttpServletRequest servletRequest,@RequestBody User user){
         boolean x = verifyCookies(servletRequest);
         int result = 0;
@@ -50,7 +50,7 @@ public class UserController {
         return true;
     }
     @ApiOperation(value = "获取用户信息列表",httpMethod = "POST")
-    @RequestMapping(value = "/getUserList",method = RequestMethod.POST)
+    @RequestMapping(value = "/v1/getUserList",method = RequestMethod.POST)
     public List<User> getUserListInfo(HttpServletRequest servletRequest,@RequestBody User user){
         boolean x = verifyCookies(servletRequest);
         if(x==true){
@@ -62,7 +62,7 @@ public class UserController {
         }
     }
     @ApiOperation(value = "更新用户信息接口",httpMethod = "POST")
-    @RequestMapping(value = "/updateUser",method = RequestMethod.POST)
+    @RequestMapping(value = "/v1/updateUser",method = RequestMethod.POST)
     public int updateUser(HttpServletRequest servletRequest,@RequestBody User user){
         boolean x = verifyCookies(servletRequest);
         int i = 0;
