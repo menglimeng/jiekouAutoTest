@@ -17,8 +17,9 @@ import java.io.IOException;
 
 public class UpdateUserTest {
     @Test(dependsOnGroups = "loginTrue",description = "修改用户成功案例")
-    public void UpadteUserTureCase() throws IOException {
+    public void UpadteUserTureCase() throws IOException, InterruptedException {
         SqlSession sqlSession = DataBaseUtils.sqlSession();
+        //Thread.sleep(10000);
         UpdateUserCase updateUserCase = sqlSession.selectOne("updateUserCase",1);
         System.out.println(updateUserCase.toString());
         System.out.println(UserUrlConfig.updateUrl);
@@ -50,20 +51,21 @@ public class UpdateUserTest {
 
         HttpPost httpPost = new HttpPost(UserUrlConfig.updateUrl);
         JSONObject param = new JSONObject();
-        param.put("userId",updateUserCase.getUserId()+"");
-        param.put("userName",updateUserCase.getUserName());
-        param.put("sex",updateUserCase.getSex());
-        param.put("age",updateUserCase.getAge());
-        param.put("permission",updateUserCase.getPermission());
-        param.put("isDelete",updateUserCase.getIsDelete());
-        httpPost.setHeader("context-type","application/json");
+       /* param.put("id",updateUserCase.getId()+"");*/
+        param.put("id",updateUserCase.getUserId()+"");
+        param.put("username",updateUserCase.getUserName()+"");
+        param.put("sex",updateUserCase.getSex()+"");
+        param.put("age",updateUserCase.getAge()+"");
+        param.put("permission",updateUserCase.getPermission()+"");
+        param.put("isDelete",updateUserCase.getIsDelete()+"");
+        httpPost.setHeader("Content-Type","application/json");
         StringEntity entity = new StringEntity(param.toString(),"utf-8");
         httpPost.setEntity(entity);
         UserUrlConfig.httpClient.setCookieStore(UserUrlConfig.store);
         String result;
         HttpResponse response = UserUrlConfig.httpClient.execute(httpPost);
         result = EntityUtils.toString(response.getEntity(),"utf-8");
-
+        System.out.println(result);
         return Integer.parseInt(result);
     }
 }

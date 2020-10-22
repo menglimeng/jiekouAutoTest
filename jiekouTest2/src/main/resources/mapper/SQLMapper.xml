@@ -10,7 +10,7 @@
         select * from addusercase where id = #{id};
     </select>
     <select id="updateUserCase" parameterType="Integer" resultType="com.course.model.UpdateUserCase">
-        select * from updateusercase where userId = #{userId};
+        select * from updateusercase where id = #{id};
     </select>
     <select id="deleteUserCase" parameterType="Integer" resultType="com.course.model.UpdateUserCase">
         select * from updateusercase where id = #{id} ;

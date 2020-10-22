@@ -26,7 +26,7 @@ public class AddUserTest {
         //获取请求，返回结果
         String result = getResult(addUserCase);
         //结果比对
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         User user = sqlSession.selectOne("addUser",addUserCase);
         System.out.println(user.toString());
         Assert.assertEquals(addUserCase.getExpected(),result);
@@ -44,7 +44,7 @@ public class AddUserTest {
         param.put("permission",addUserCase.getPermission());
         param.put("isDelete",addUserCase.getIsDelete());
         //设置请求头信息
-        httpPost.setHeader("content-type","application/json");
+        httpPost.setHeader("Content-Type","application/json");
         //将参数写入请求信息中
         StringEntity entity = new StringEntity(param.toString(),"utf-8");
         httpPost.setEntity(entity);

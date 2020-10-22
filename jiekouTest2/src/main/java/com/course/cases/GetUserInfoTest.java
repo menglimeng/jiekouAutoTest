@@ -43,7 +43,7 @@ public class GetUserInfoTest {
         JSONObject param = new JSONObject();
         param.put("userId",getUserInfoCase.getUserId()+"");
         //写入头信息
-        httpPost.setHeader("context-type","application/json");
+        httpPost.setHeader("Content-Type","application/json");
         //参数放入请求
         StringEntity entity = new StringEntity(param.toString(),"utf-8");
         httpPost.setEntity(entity);

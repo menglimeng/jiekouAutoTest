@@ -46,7 +46,7 @@ public class GetUserListTest {
         param.put("userName",getuserListCase.getUserName());
         param.put("sex",getuserListCase.getSex());
         param.put("age",getuserListCase.getAge());
-        httpPost.setHeader("context-type","application/json");
+        httpPost.setHeader("Content-Type","application/json");
         StringEntity entity = new StringEntity(param.toString(),"utf-8");
         httpPost.setEntity(entity);
         UserUrlConfig.httpClient.setCookieStore(UserUrlConfig.store);
