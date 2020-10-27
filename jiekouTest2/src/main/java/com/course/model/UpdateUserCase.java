@@ -6,7 +6,7 @@ import lombok.Data;
 public class UpdateUserCase {
     private int id;
     private int userId;
-    private String userName;
+    private String username;
     private String sex;
     private String age;
     private String permission;

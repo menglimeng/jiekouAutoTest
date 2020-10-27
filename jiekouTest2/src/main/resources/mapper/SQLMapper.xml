@@ -25,7 +25,7 @@
     <!--添加用户接口-->
     <select id="addUser" parameterType="com.course.model.AddUserCase" resultType="com.course.model.User">
         select * from user where
-        userName=#{userName}
+        username=#{username}
         and password=#{password}
         and sex=#{sex}
         and age=#{age}
@@ -44,8 +44,8 @@
         <!-- SQL语句 -->
         select * from user
         <trim prefix="WHERE" prefixOverrides="and">
-            <if test="null != userName and '' !=userName">
-                AND userName=#{userName}
+            <if test="null != username and '' !=username">
+                AND username=#{username}
             </if>
             <if test="null != sex and '' !=sex">
                 AND sex=#{sex}
@@ -62,8 +62,8 @@
     <select id="getUpdateUserInfo" parameterType="com.course.model.UpdateUserCase" resultType="com.course.model.User">
         select * from user
         <trim prefix="WHERE" prefixOverrides="and">
-            <if test="null != userName and '' !=userName">
-                AND userName=#{userName}
+            <if test="null != username and '' !=username">
+                AND username=#{username}
             </if>
             <if test="null != sex and '' !=sex">
                 AND sex=#{sex}

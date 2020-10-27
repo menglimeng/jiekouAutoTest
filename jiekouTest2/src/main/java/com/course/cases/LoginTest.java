@@ -54,7 +54,7 @@ public class LoginTest {
     private String getResult(LoginCase loginCase) throws IOException {
         HttpPost httpPost = new HttpPost(UserUrlConfig.loginUrl);
         JSONObject param = new JSONObject();
-        param.put("username",loginCase.getUserName());
+        param.put("username",loginCase.getUsername());
         param.put("password",loginCase.getPassword());
         httpPost.setHeader("content-type","application/json");
         StringEntity entity = new StringEntity(param.toString(),"utf-8");

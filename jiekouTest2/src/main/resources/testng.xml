@@ -9,17 +9,17 @@
                     <include name="loginFalseCase"/>
                 </methods>
             </class>
-            <!--<class name="com.course.cases.AddUserTest">
+            <class name="com.course.cases.AddUserTest">
                 <methods>
                     <include name="addUserTureCase"/>
                 </methods>
-            </class>-->
-            <!--<class name="com.course.cases.UpdateUserTest">
+            </class>
+            <class name="com.course.cases.UpdateUserTest">
                 <methods>
                     <include name="UpadteUserTureCase"/>
                     <include name="DeleteUserCase"/>
                 </methods>
-            </class>-->
+            </class>
             <class name="com.course.cases.GetUserInfoTest">
                 <methods>
                     <include name="GetUserInfoCase"/>

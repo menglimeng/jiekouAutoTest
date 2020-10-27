@@ -26,7 +26,7 @@ public class AddUserTest {
         //获取请求，返回结果
         String result = getResult(addUserCase);
         //结果比对
-        Thread.sleep(5000);
+        Thread.sleep(10000);
         User user = sqlSession.selectOne("addUser",addUserCase);
         System.out.println(user.toString());
         Assert.assertEquals(addUserCase.getExpected(),result);
@@ -37,7 +37,7 @@ public class AddUserTest {
         HttpPost httpPost =  new HttpPost(UserUrlConfig.addUserUrl);
         //写入参数
         JSONObject param = new JSONObject();
-        param.put("username",addUserCase.getUserName());
+        param.put("username",addUserCase.getUsername());
         param.put("password",addUserCase.getPassword());
         param.put("sex",addUserCase.getSex());
         param.put("age",addUserCase.getAge());

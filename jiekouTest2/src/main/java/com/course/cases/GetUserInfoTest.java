@@ -16,7 +16,6 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class GetUserInfoTest {
@@ -33,7 +32,11 @@ public class GetUserInfoTest {
         List userList = new ArrayList();
         userList.add(user);
         JSONArray jsonArray = new JSONArray(userList);
-        Assert.assertEquals(jsonArray,resultJson);
+        if(jsonArray.equals(resultJson)){
+            Boolean result = true;
+            Assert.assertEquals(getUserInfoCase.getExpected(),result);
+        }
+
     }
 
     private JSONArray getJsonResult(GetUserInfoCase getUserInfoCase) throws IOException {
@@ -54,9 +57,8 @@ public class GetUserInfoTest {
         //获取结果
         String result;
         result = EntityUtils.toString(httpResponse.getEntity(),"utf-8");
-        //不懂
-        List resultList = Arrays.asList(result);
-        JSONArray array = new JSONArray(resultList);
+
+        JSONArray array = new JSONArray(result);
 
         return array;
     }

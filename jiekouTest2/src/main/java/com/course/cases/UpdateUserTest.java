@@ -53,7 +53,7 @@ public class UpdateUserTest {
         JSONObject param = new JSONObject();
        /* param.put("id",updateUserCase.getId()+"");*/
         param.put("id",updateUserCase.getUserId()+"");
-        param.put("username",updateUserCase.getUserName()+"");
+        param.put("username",updateUserCase.getUsername()+"");
         param.put("sex",updateUserCase.getSex()+"");
         param.put("age",updateUserCase.getAge()+"");
         param.put("permission",updateUserCase.getPermission()+"");

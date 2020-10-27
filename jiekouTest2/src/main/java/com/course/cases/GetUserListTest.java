@@ -27,7 +27,7 @@ public class GetUserListTest {
         //获取请求结果
         JSONArray resultJson = getJsonResult(getuserListCase);
         //结果校验
-        List<User> userList = sqlSession.selectList(getuserListCase.getExpected(),getuserListCase);
+        List<User> userList = sqlSession.selectList("getUserList",getuserListCase);
         for (User u:userList){
             System.out.println("获取的user"+u.toString());
         }
@@ -43,7 +43,7 @@ public class GetUserListTest {
     private JSONArray getJsonResult(GetuserListCase getuserListCase) throws IOException {
         HttpPost httpPost = new HttpPost(UserUrlConfig.getUserListUrl);
         JSONObject param = new JSONObject();
-        param.put("userName",getuserListCase.getUserName());
+        param.put("username",getuserListCase.getUsername());
         param.put("sex",getuserListCase.getSex());
         param.put("age",getuserListCase.getAge());
         httpPost.setHeader("Content-Type","application/json");
